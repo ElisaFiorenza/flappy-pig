@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://2odwe43vtklx"]
+
+[ext_resource type="Texture2D" uid="uid://b817bif02yqxl" path="res://1scena/turkish.png" id="1_hbcrn"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7lu1i"]
+radius = 34.0
+height = 196.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2lt7w"]
+radius = 34.0
+height = 210.0
+
+[node name="kebabboni" type="Node2D"]
+
+[node name="kebab1" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="kebab1"]
+position = Vector2(360, 1)
+shape = SubResource("CapsuleShape2D_7lu1i")
+
+[node name="Sprite2D" type="Sprite2D" parent="kebab1"]
+position = Vector2(360, 0)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_hbcrn")
+
+[node name="kebab2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="kebab2"]
+position = Vector2(360, 287)
+shape = SubResource("CapsuleShape2D_2lt7w")
+
+[node name="Sprite2D" type="Sprite2D" parent="kebab2"]
+position = Vector2(360, 300)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_hbcrn")
