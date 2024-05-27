@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b817bif02yqxl"
-path="res://.godot/imported/turkish.png-011b9a584e8aa289d19b0cbce2c0aab1.ctex"
+uid="uid://c1p552dyyjv8s"
+path="res://.godot/imported/Red Effect Bullet Impact Explosion 32x32.png-f7e853b2beed35f4d0f9c0640455e8d2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://1scena/turkish.png"
-dest_files=["res://.godot/imported/turkish.png-011b9a584e8aa289d19b0cbce2c0aab1.ctex"]
+source_file="res://Red Effect Bullet Impact Explosion 32x32.png"
+dest_files=["res://.godot/imported/Red Effect Bullet Impact Explosion 32x32.png-f7e853b2beed35f4d0f9c0640455e8d2.ctex"]
 
 [params]
 

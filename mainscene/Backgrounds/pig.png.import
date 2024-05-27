@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b76cx4gig1ygp"
-path="res://.godot/imported/turkish.png-d414cb5112a1c0fd8cd0b84f4c9c9bf7.ctex"
+uid="uid://cc0k74055yasb"
+path="res://.godot/imported/pig.png-ab4ec721b4b8b86c60e003b9953f121e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://1scena/Backgrounds/turkish.png"
-dest_files=["res://.godot/imported/turkish.png-d414cb5112a1c0fd8cd0b84f4c9c9bf7.ctex"]
+source_file="res://mainscene/Backgrounds/pig.png"
+dest_files=["res://.godot/imported/pig.png-ab4ec721b4b8b86c60e003b9953f121e.ctex"]
 
 [params]
 

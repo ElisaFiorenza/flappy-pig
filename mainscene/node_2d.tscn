@@ -1,0 +1,153 @@
+[gd_scene load_steps=20 format=3 uid="uid://bkukri0k5txql"]
+
+[ext_resource type="Texture2D" uid="uid://crg31gvm865kr" path="res://mainscene/Backgrounds/Sky.png" id="1_8pg5y"]
+[ext_resource type="Script" path="res://mainscene/node_2d.gd" id="1_g7rf2"]
+[ext_resource type="Texture2D" uid="uid://duxnue5pami02" path="res://mainscene/Backgrounds/Clouds.png" id="2_d4kbd"]
+[ext_resource type="Texture2D" uid="uid://dpnxp266omdjs" path="res://mainscene/Backgrounds/Rock Mountains.png" id="3_u6xvs"]
+[ext_resource type="Texture2D" uid="uid://dfh52qg18daob" path="res://mainscene/Backgrounds/Grass Mountains.png" id="4_3r1wn"]
+[ext_resource type="Script" path="res://mainscene/CharacterBody2D.gd" id="5_3ss5p"]
+[ext_resource type="Texture2D" uid="uid://c71rxhr7feyvj" path="res://mainscene/animatedpig.png" id="7_gx7ao"]
+[ext_resource type="Script" path="res://mainscene/Camera2D.gd" id="7_qdq4s"]
+[ext_resource type="FontFile" uid="uid://bv5oeql1efpu" path="res://BigBlueTerm437NerdFont-Regular.ttf" id="9_yqosj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v5ri1"]
+radius = 20.2485
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4hcx"]
+atlas = ExtResource("7_gx7ao")
+region = Rect2(16, 16, 32, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3vjos"]
+atlas = ExtResource("7_gx7ao")
+region = Rect2(48, 16, 32, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2n2jl"]
+atlas = ExtResource("7_gx7ao")
+region = Rect2(80, 16, 32, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_liec4"]
+atlas = ExtResource("7_gx7ao")
+region = Rect2(112, 16, 32, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_per0c"]
+atlas = ExtResource("7_gx7ao")
+region = Rect2(144, 16, 32, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v5so6"]
+atlas = ExtResource("7_gx7ao")
+region = Rect2(176, 16, 32, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lkbb8"]
+atlas = ExtResource("7_gx7ao")
+region = Rect2(16, 46, 32, 30)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_on4si"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4hcx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3vjos")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2n2jl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_liec4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_per0c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v5so6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lkbb8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_a8770"]
+
+[node name="MainNode" type="Node2D"]
+script = ExtResource("1_g7rf2")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(320, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource("1_8pg5y")
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(320, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+texture = ExtResource("2_d4kbd")
+centered = false
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(320, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+texture = ExtResource("3_u6xvs")
+centered = false
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(320, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+texture = ExtResource("4_3r1wn")
+centered = false
+
+[node name="Pig" type="CharacterBody2D" parent="."]
+script = ExtResource("5_3ss5p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pig"]
+position = Vector2(160, 167)
+shape = SubResource("CircleShape2D_v5ri1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pig"]
+texture_filter = 1
+position = Vector2(158, 166)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_on4si")
+autoplay = "default"
+frame_progress = 0.603149
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+script = ExtResource("7_qdq4s")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="ceiling" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ceiling"]
+position = Vector2(320, -40)
+rotation = 3.14159
+shape = SubResource("WorldBoundaryShape2D_a8770")
+
+[node name="floor" type="StaticBody2D" parent="."]
+position = Vector2(0, 380)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor"]
+position = Vector2(320, -20)
+shape = SubResource("WorldBoundaryShape2D_a8770")
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 3
+offset_left = 274.0
+offset_top = 101.0
+offset_right = 531.0
+offset_bottom = 124.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("9_yqosj")
+text = "Premi Spazio per saltare"

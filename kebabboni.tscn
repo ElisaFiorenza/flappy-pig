@@ -1,35 +1,71 @@
-[gd_scene load_steps=4 format=3 uid="uid://2odwe43vtklx"]
+[gd_scene load_steps=7 format=3 uid="uid://2odwe43vtklx"]
 
-[ext_resource type="Texture2D" uid="uid://b817bif02yqxl" path="res://1scena/turkish.png" id="1_hbcrn"]
+[ext_resource type="Texture2D" uid="uid://c1p552dyyjv8s" path="res://Red Effect Bullet Impact Explosion 32x32.png" id="1_c0lf7"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7lu1i"]
-radius = 34.0
-height = 196.0
+[sub_resource type="AtlasTexture" id="AtlasTexture_350s2"]
+atlas = ExtResource("1_c0lf7")
+region = Rect2(352, 192, 32, 32)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2lt7w"]
-radius = 34.0
-height = 210.0
+[sub_resource type="AtlasTexture" id="AtlasTexture_0hp37"]
+atlas = ExtResource("1_c0lf7")
+region = Rect2(384, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vu1kg"]
+atlas = ExtResource("1_c0lf7")
+region = Rect2(416, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rcf5h"]
+atlas = ExtResource("1_c0lf7")
+region = Rect2(448, 192, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xabpg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_350s2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0hp37")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vu1kg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rcf5h")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="kebabboni" type="Node2D"]
 
 [node name="kebab1" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="kebab1"]
-position = Vector2(360, 1)
-shape = SubResource("CapsuleShape2D_7lu1i")
+[node name="fiamma1" type="AnimatedSprite2D" parent="kebab1"]
+texture_filter = 1
+position = Vector2(359, 286)
+scale = Vector2(2.60938, 6.625)
+sprite_frames = SubResource("SpriteFrames_xabpg")
+autoplay = "default"
 
-[node name="Sprite2D" type="Sprite2D" parent="kebab1"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="kebab1"]
 position = Vector2(360, 0)
 scale = Vector2(0.4, 0.4)
-texture = ExtResource("1_hbcrn")
+polygon = PackedVector2Array(13.5, -291.2, 13.5, -270.5, 11.5, -177.5, 13.6, -174.5, 14.5, -174.5, 43.5, -173.5, 43.5, -171.6, 58.1, -162.5, 70.3, -162.5, 73.5, -159.3, 73.5, -156.5, 74.2, -152.5, 83.5, -139.1, 83.5, -131.8, 86.5, -121.8, 86.5, -91.5, 85.5, -91.5, 84.5, -33.5, 83.3, -33.5, 74.3, 41.5, 73.2, 41.5, 61.1, 101.5, 60, 101.5, 45.5, 147.8, 45.5, 151.7, 39.1, 181.5, 37.2, 181.5, 29.3, 188.5, 19.9, 188.5, 5.5, 191.2, 5.5, 217.5, 4.5, 245.5, 1.8, 245.5, -10.5, 249.2, -10.5, 246.7, -14.5, 244.7, -14.5, 214.5, -13.6, 191.2, -41.5, 181.9, -41.5, 180.4, -51.5, 171.4, -51.5, 164.5, -66.5, 102.7, -66.5, 97.9, -78.5, 31.7, -78.5, 22.5, -88.5, -96.4, -88.5, -122.2, -83.5, -128.9, -90.5, -146.5, -87.2, -146.5, -77.2, -154.5, -74.6, -154.5, -70.1, -155.8, -71.8, -158.4, -70.7, -160.5, -69.6, -160.5, -67.6, -163.5, -54.9, -163.5, -20.5, -170.2, -9.5, -177.6, -9.5, -182.5, -7.5, -289.5, -5.60001, -289.5, -4.5, -291.2, -4.5, -293.8)
 
 [node name="kebab2" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="kebab2"]
-position = Vector2(360, 287)
-shape = SubResource("CapsuleShape2D_2lt7w")
+[node name="fiamma2" type="AnimatedSprite2D" parent="kebab2"]
+texture_filter = 1
+position = Vector2(362, -6)
+rotation = 3.14159
+scale = Vector2(2.60938, 6.625)
+sprite_frames = SubResource("SpriteFrames_xabpg")
+autoplay = "default"
+frame_progress = 0.136689
 
-[node name="Sprite2D" type="Sprite2D" parent="kebab2"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="kebab2"]
 position = Vector2(360, 300)
 scale = Vector2(0.4, 0.4)
-texture = ExtResource("1_hbcrn")
+polygon = PackedVector2Array(13.5, -291.2, 13.5, -270.5, 11.5, -177.5, 13.6, -174.5, 14.5, -174.5, 43.5, -173.5, 43.5, -171.6, 58.1, -162.5, 70.3, -162.5, 73.5, -159.3, 73.5, -156.5, 74.2, -152.5, 83.5, -139.1, 83.5, -131.8, 86.5, -121.8, 86.5, -91.5, 85.5, -91.5, 84.5, -33.5, 83.3, -33.5, 74.3, 41.5, 73.2, 41.5, 61.1, 101.5, 60, 101.5, 45.5, 147.8, 45.5, 151.7, 39.1, 181.5, 37.2, 181.5, 29.3, 188.5, 19.9, 188.5, 5.5, 191.2, 5.5, 217.5, 4.5, 245.5, 1.8, 245.5, -10.5, 249.2, -10.5, 246.7, -14.5, 244.7, -14.5, 214.5, -13.6, 191.2, -41.5, 181.9, -41.5, 180.4, -51.5, 171.4, -51.5, 164.5, -66.5, 102.7, -66.5, 97.9, -78.5, 31.7, -78.5, 22.5, -88.5, -96.4, -88.5, -122.2, -83.5, -128.9, -90.5, -146.5, -87.2, -146.5, -77.2, -154.5, -74.6, -154.5, -70.1, -155.8, -71.8, -158.4, -70.7, -160.5, -69.6, -160.5, -67.6, -163.5, -54.9, -163.5, -20.5, -170.2, -9.5, -177.6, -9.5, -182.5, -7.5, -289.5, -5.60001, -289.5, -4.5, -291.2, -4.5, -293.8)
