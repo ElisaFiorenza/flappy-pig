@@ -78,6 +78,7 @@ script = ExtResource("1_g7rf2")
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.25, 0.25)
 motion_mirroring = Vector2(320, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
@@ -85,6 +86,7 @@ texture = ExtResource("1_8pg5y")
 centered = false
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 0.5)
 motion_mirroring = Vector2(320, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
@@ -92,6 +94,7 @@ texture = ExtResource("2_d4kbd")
 centered = false
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.75, 0.75)
 motion_mirroring = Vector2(320, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
@@ -118,7 +121,8 @@ position = Vector2(158, 166)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_on4si")
 autoplay = "default"
-frame_progress = 0.603149
+frame = 6
+frame_progress = 0.590934
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
