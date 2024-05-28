@@ -112,15 +112,16 @@ texture = ExtResource("4_3r1wn")
 centered = false
 
 [node name="Pig" type="CharacterBody2D" parent="."]
+position = Vector2(0, 20)
 script = ExtResource("5_3ss5p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pig"]
-position = Vector2(153, 169)
+position = Vector2(160, 160)
 shape = SubResource("CircleShape2D_v5ri1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pig"]
 texture_filter = 1
-position = Vector2(158, 166)
+position = Vector2(160, 160)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_on4si")
 autoplay = "default"
@@ -130,7 +131,7 @@ frame_progress = 0.590934
 [node name="hitbox" type="Area2D" parent="Pig"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pig/hitbox"]
-position = Vector2(160, 169)
+position = Vector2(160, 160)
 shape = SubResource("CircleShape2D_73m3i")
 
 [node name="Camera2D" type="Camera2D" parent="."]

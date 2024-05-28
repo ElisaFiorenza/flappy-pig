@@ -21,7 +21,7 @@ text = "Riprova"
 layout_mode = 2
 text = "Esci"
 
-[node name="HAI PERSO" type="Label" parent="."]
+[node name="GameOver" type="Label" parent="."]
 texture_filter = 3
 offset_left = 116.0
 offset_top = 155.0
