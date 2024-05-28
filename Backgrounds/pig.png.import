@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpnxp266omdjs"
-path="res://.godot/imported/Rock Mountains.png-7ece364454dbc6f0c09af7a66fe77967.ctex"
+uid="uid://cc0k74055yasb"
+path="res://.godot/imported/pig.png-b346df92d2aafca04e1ff00933b00740.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mainscene/Backgrounds/Rock Mountains.png"
-dest_files=["res://.godot/imported/Rock Mountains.png-7ece364454dbc6f0c09af7a66fe77967.ctex"]
+source_file="res://Backgrounds/pig.png"
+dest_files=["res://.godot/imported/pig.png-b346df92d2aafca04e1ff00933b00740.ctex"]
 
 [params]
 

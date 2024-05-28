@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://vuaqbrfygxe"]
+
+[ext_resource type="Script" path="res://gameover/gameover.gd" id="1_v7klc"]
+[ext_resource type="FontFile" uid="uid://bv5oeql1efpu" path="res://BigBlueTerm437NerdFont-Regular.ttf" id="2_6yjf2"]
+
+[node name="gameover" type="Node2D"]
+script = ExtResource("1_v7klc")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_right = 321.0
+offset_bottom = 66.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="riprova" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Riprova"
+
+[node name="Esci" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Esci"
+
+[node name="HAI PERSO" type="Label" parent="."]
+texture_filter = 3
+offset_left = 116.0
+offset_top = 155.0
+offset_right = 215.0
+offset_bottom = 174.0
+theme_override_colors/font_color = Color(0.984314, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_6yjf2")
+text = "HAI PERSO"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/riprova" to="." method="_on_riprova_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Esci" to="." method="_on_esci_pressed"]

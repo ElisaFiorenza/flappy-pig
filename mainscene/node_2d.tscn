@@ -1,17 +1,17 @@
-[gd_scene load_steps=20 format=3 uid="uid://bkukri0k5txql"]
+[gd_scene load_steps=21 format=3 uid="uid://bkukri0k5txql"]
 
-[ext_resource type="Texture2D" uid="uid://crg31gvm865kr" path="res://mainscene/Backgrounds/Sky.png" id="1_8pg5y"]
+[ext_resource type="Texture2D" uid="uid://crg31gvm865kr" path="res://Backgrounds/Sky.png" id="1_8pg5y"]
 [ext_resource type="Script" path="res://mainscene/node_2d.gd" id="1_g7rf2"]
-[ext_resource type="Texture2D" uid="uid://duxnue5pami02" path="res://mainscene/Backgrounds/Clouds.png" id="2_d4kbd"]
-[ext_resource type="Texture2D" uid="uid://dpnxp266omdjs" path="res://mainscene/Backgrounds/Rock Mountains.png" id="3_u6xvs"]
-[ext_resource type="Texture2D" uid="uid://dfh52qg18daob" path="res://mainscene/Backgrounds/Grass Mountains.png" id="4_3r1wn"]
+[ext_resource type="Texture2D" uid="uid://duxnue5pami02" path="res://Backgrounds/Clouds.png" id="2_d4kbd"]
+[ext_resource type="Texture2D" uid="uid://dpnxp266omdjs" path="res://Backgrounds/Rock Mountains.png" id="3_u6xvs"]
+[ext_resource type="Texture2D" uid="uid://dfh52qg18daob" path="res://Backgrounds/Grass Mountains.png" id="4_3r1wn"]
 [ext_resource type="Script" path="res://mainscene/CharacterBody2D.gd" id="5_3ss5p"]
 [ext_resource type="Texture2D" uid="uid://c71rxhr7feyvj" path="res://mainscene/animatedpig.png" id="7_gx7ao"]
 [ext_resource type="Script" path="res://mainscene/Camera2D.gd" id="7_qdq4s"]
 [ext_resource type="FontFile" uid="uid://bv5oeql1efpu" path="res://BigBlueTerm437NerdFont-Regular.ttf" id="9_yqosj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v5ri1"]
-radius = 20.2485
+radius = 10.0499
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y4hcx"]
 atlas = ExtResource("7_gx7ao")
@@ -70,6 +70,9 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_73m3i"]
+radius = 20.0
+
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_a8770"]
 
 [node name="MainNode" type="Node2D"]
@@ -112,7 +115,7 @@ centered = false
 script = ExtResource("5_3ss5p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pig"]
-position = Vector2(160, 167)
+position = Vector2(153, 169)
 shape = SubResource("CircleShape2D_v5ri1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pig"]
@@ -123,6 +126,12 @@ sprite_frames = SubResource("SpriteFrames_on4si")
 autoplay = "default"
 frame = 6
 frame_progress = 0.590934
+
+[node name="hitbox" type="Area2D" parent="Pig"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pig/hitbox"]
+position = Vector2(160, 169)
+shape = SubResource("CircleShape2D_73m3i")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
@@ -155,3 +164,5 @@ theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("9_yqosj")
 text = "Premi Spazio per saltare"
+
+[connection signal="body_entered" from="Pig/hitbox" to="." method="_on_hitbox_body_entered"]

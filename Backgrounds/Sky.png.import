@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b76cx4gig1ygp"
-path="res://.godot/imported/turkish.png-31f46a1e69f067a561e8ede6439f4c7e.ctex"
+uid="uid://crg31gvm865kr"
+path="res://.godot/imported/Sky.png-4994ce93f7e88238bff56d78c41e150c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mainscene/Backgrounds/turkish.png"
-dest_files=["res://.godot/imported/turkish.png-31f46a1e69f067a561e8ede6439f4c7e.ctex"]
+source_file="res://Backgrounds/Sky.png"
+dest_files=["res://.godot/imported/Sky.png-4994ce93f7e88238bff56d78c41e150c.ctex"]
 
 [params]
 

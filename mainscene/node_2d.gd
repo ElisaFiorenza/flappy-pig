@@ -15,6 +15,7 @@ func _ready():
 	first_flame.position.x = flame_position
 	first_flame.position.y = randf_range(-100,100)
 	flame_position += 360
+	
 	while true:
 		var new_flame = FLAMES.instantiate()
 		add_child(new_flame)
@@ -31,4 +32,7 @@ func _ready():
 func _process(delta):
 	parallax_background.scroll_offset += scroll_speed * delta
 
-
+func _on_hitbox_body_entered(body):
+	if body.name == "flame1" || body.name == "flame2" || body.name == "ceiling" || body.name == "floor":
+		pig._death()
+		get_tree().change_scene_to_file("res://gameover/gameover.tscn")
