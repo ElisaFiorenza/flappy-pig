@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://dedfjyxilmk48"]
+
+[ext_resource type="Texture2D" uid="uid://bumutbt2djvf1" path="res://explosionfireanimation.png" id="1_vf2ib"]
+
+[resource]
+atlas = ExtResource("1_vf2ib")
+region = Rect2(352, 192, 32, 32)

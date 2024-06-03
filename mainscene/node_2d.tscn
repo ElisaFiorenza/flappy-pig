@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bkukri0k5txql"]
+[gd_scene load_steps=28 format=3 uid="uid://bkukri0k5txql"]
 
 [ext_resource type="Texture2D" uid="uid://crg31gvm865kr" path="res://Backgrounds/Sky.png" id="1_8pg5y"]
 [ext_resource type="Script" path="res://mainscene/node_2d.gd" id="1_g7rf2"]
@@ -8,10 +8,32 @@
 [ext_resource type="Script" path="res://mainscene/CharacterBody2D.gd" id="5_3ss5p"]
 [ext_resource type="Texture2D" uid="uid://c71rxhr7feyvj" path="res://mainscene/animatedpig.png" id="7_gx7ao"]
 [ext_resource type="Script" path="res://mainscene/Camera2D.gd" id="7_qdq4s"]
+[ext_resource type="Texture2D" uid="uid://ud4mld74xe58" path="res://baconexplosionanimation.png" id="7_yg3w1"]
+[ext_resource type="Texture2D" uid="uid://d0e2k1l4lstmu" path="res://Spritebacon.png" id="8_3gr5g"]
 [ext_resource type="FontFile" uid="uid://bv5oeql1efpu" path="res://BigBlueTerm437NerdFont-Regular.ttf" id="9_yqosj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v5ri1"]
 radius = 10.0499
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bktnf"]
+atlas = ExtResource("7_yg3w1")
+region = Rect2(573, 400, 33, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ypwdt"]
+atlas = ExtResource("7_yg3w1")
+region = Rect2(606, 400, 33, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ycm13"]
+atlas = ExtResource("7_yg3w1")
+region = Rect2(639, 400, 33, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eys40"]
+atlas = ExtResource("7_yg3w1")
+region = Rect2(672, 400, 33, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1337c"]
+atlas = ExtResource("8_3gr5g")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y4hcx"]
 atlas = ExtResource("7_gx7ao")
@@ -45,6 +67,26 @@ region = Rect2(16, 46, 32, 30)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_bktnf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ypwdt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ycm13")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eys40")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_1337c")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_y4hcx")
 }, {
 "duration": 1.0,
@@ -65,9 +107,35 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_lkbb8")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4hcx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3vjos")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2n2jl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_liec4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_per0c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v5so6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lkbb8")
+}],
+"loop": false,
+"name": &"flap",
+"speed": 20.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_73m3i"]
@@ -124,9 +192,7 @@ texture_filter = 1
 position = Vector2(160, 160)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_on4si")
-autoplay = "default"
-frame = 6
-frame_progress = 0.590934
+animation = &"flap"
 
 [node name="hitbox" type="Area2D" parent="Pig"]
 

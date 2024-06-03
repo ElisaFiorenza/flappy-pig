@@ -7,7 +7,6 @@ const FLAMES = preload("res://kebabboni.tscn")
 var scroll_speed = Vector2(0, 10) # Velocità di scorrimento (X, Y)
 var flame_position = 10
 var arrayflame = [0,0]
-var i
 func _ready():
 	var first_flame = FLAMES.instantiate()
 	arrayflame[0] = first_flame;
@@ -20,7 +19,7 @@ func _ready():
 		var new_flame = FLAMES.instantiate()
 		add_child(new_flame)
 		new_flame.position.x = flame_position
-		new_flame.position.y = randf_range(-100,100)
+		new_flame.position.y = randf_range(-100,80)
 		flame_position += 360
 		var last_flame = arrayflame[1]
 		arrayflame[1] = first_flame
@@ -35,4 +34,5 @@ func _process(delta):
 func _on_hitbox_body_entered(body):
 	if body.name == "flame1" || body.name == "flame2" || body.name == "ceiling" || body.name == "floor":
 		pig._death()
+		await get_tree().create_timer(1).timeout
 		get_tree().change_scene_to_file("res://gameover/gameover.tscn")

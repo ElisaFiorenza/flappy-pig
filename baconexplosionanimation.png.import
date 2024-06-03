@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1p552dyyjv8s"
-path="res://.godot/imported/Red Effect Bullet Impact Explosion 32x32.png-f7e853b2beed35f4d0f9c0640455e8d2.ctex"
+uid="uid://ud4mld74xe58"
+path="res://.godot/imported/baconexplosionanimation.png-4ec50b2a75e000c96dc4287e6e3fe149.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Red Effect Bullet Impact Explosion 32x32.png"
-dest_files=["res://.godot/imported/Red Effect Bullet Impact Explosion 32x32.png-f7e853b2beed35f4d0f9c0640455e8d2.ctex"]
+source_file="res://baconexplosionanimation.png"
+dest_files=["res://.godot/imported/baconexplosionanimation.png-4ec50b2a75e000c96dc4287e6e3fe149.ctex"]
 
 [params]
 
