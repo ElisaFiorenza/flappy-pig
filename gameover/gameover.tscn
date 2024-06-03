@@ -6,6 +6,18 @@
 [node name="gameover" type="Node2D"]
 script = ExtResource("1_v7klc")
 
+[node name="punteggiofinale" type="Label" parent="."]
+texture_filter = 1
+offset_left = 100.0
+offset_top = 240.0
+offset_right = 421.0
+offset_bottom = 263.0
+scale = Vector2(0.85, 0.85)
+theme_override_colors/font_color = Color(1, 0.448204, 0.89581, 1)
+theme_override_colors/font_shadow_color = Color(0.0562916, 0.0562916, 0.0562916, 1)
+theme_override_fonts/font = ExtResource("2_6yjf2")
+text = "Punteggio:"
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
 offset_right = 321.0
 offset_bottom = 204.0

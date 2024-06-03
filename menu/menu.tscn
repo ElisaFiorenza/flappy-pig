@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://bckn6mmcpt560"]
+[gd_scene load_steps=16 format=3 uid="uid://bckn6mmcpt560"]
 
 [ext_resource type="Script" path="res://menu/menu.gd" id="1_hes3d"]
 [ext_resource type="Texture2D" uid="uid://c2t6dsqhwknel" path="res://FullBackground.png" id="2_f6qgk"]
 [ext_resource type="FontFile" uid="uid://bv5oeql1efpu" path="res://BigBlueTerm437NerdFont-Regular.ttf" id="3_icagg"]
 [ext_resource type="Texture2D" uid="uid://c71rxhr7feyvj" path="res://mainscene/animatedpig.png" id="4_bk8rh"]
+[ext_resource type="AudioStream" uid="uid://b1wxaii7ge2d0" path="res://MusicaTitolo.mp3" id="5_vg2u2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ufcyo"]
 radius = 10.0499
@@ -142,6 +143,10 @@ autoplay = "default"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MarginContainer/VBoxContainer/Pig/hitbox"]
 position = Vector2(160, 160)
 shape = SubResource("CircleShape2D_iaxr3")
+
+[node name="MusicaMenu" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_vg2u2")
+volume_db = -30.0
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Gioca" to="." method="_on_gioca_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Esci" to="." method="_on_esci_pressed"]

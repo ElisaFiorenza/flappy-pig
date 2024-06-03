@@ -1,6 +1,8 @@
 extends Node2D
 @onready var pig = $Pig
 @onready var parallax_background = $ParallaxBackground
+@onready var points = $Camera2D/points
+@onready var point_audio = $"point-audio"
 
 
 const FLAMES = preload("res://kebabboni.tscn")
@@ -14,6 +16,7 @@ func _ready():
 	first_flame.position.x = flame_position
 	first_flame.position.y = randf_range(-100,100)
 	flame_position += 360
+	points.text = "0" 
 	
 	while true:
 		var new_flame = FLAMES.instantiate()
@@ -33,6 +36,11 @@ func _process(delta):
 
 func _on_hitbox_body_entered(body):
 	if body.name == "flame1" || body.name == "flame2" || body.name == "ceiling" || body.name == "floor":
+		points.visible = false
 		pig._death()
 		await get_tree().create_timer(1).timeout
 		get_tree().change_scene_to_file("res://gameover/gameover.tscn")
+	elif body.name == "punto":
+		point_audio.play()
+		points.text = str(int(points.text) + 1)
+		Globals.punteggio = int(points.text)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bkukri0k5txql"]
+[gd_scene load_steps=30 format=3 uid="uid://bkukri0k5txql"]
 
 [ext_resource type="Texture2D" uid="uid://crg31gvm865kr" path="res://Backgrounds/Sky.png" id="1_8pg5y"]
 [ext_resource type="Script" path="res://mainscene/node_2d.gd" id="1_g7rf2"]
@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://ud4mld74xe58" path="res://baconexplosionanimation.png" id="7_yg3w1"]
 [ext_resource type="Texture2D" uid="uid://d0e2k1l4lstmu" path="res://Spritebacon.png" id="8_3gr5g"]
 [ext_resource type="FontFile" uid="uid://bv5oeql1efpu" path="res://BigBlueTerm437NerdFont-Regular.ttf" id="9_yqosj"]
+[ext_resource type="AudioStream" uid="uid://bnb1h2205opbe" path="res://mainscene/point.wav" id="10_ch2x6"]
+[ext_resource type="AudioStream" uid="uid://ciiwbonvuuql2" path="res://mainscene/audioflapprovvisorio.mp3" id="10_dpqck"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v5ri1"]
 radius = 10.0499
@@ -78,7 +80,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_eys40")
 }, {
-"duration": 1.5,
+"duration": 3.0,
 "texture": SubResource("AtlasTexture_1337c")
 }],
 "loop": true,
@@ -192,7 +194,7 @@ texture_filter = 1
 position = Vector2(160, 160)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_on4si")
-animation = &"flap"
+autoplay = "default"
 
 [node name="hitbox" type="Area2D" parent="Pig"]
 
@@ -200,9 +202,27 @@ animation = &"flap"
 position = Vector2(160, 160)
 shape = SubResource("CircleShape2D_73m3i")
 
+[node name="flap-audio" type="AudioStreamPlayer2D" parent="Pig"]
+stream = ExtResource("10_dpqck")
+volume_db = 1.0
+
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
 script = ExtResource("7_qdq4s")
+
+[node name="points" type="Label" parent="Camera2D"]
+process_priority = 10
+z_index = 5
+texture_filter = 1
+offset_left = 147.0
+offset_top = 60.0
+offset_right = 158.0
+offset_bottom = 77.0
+scale = Vector2(2, 2)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_yqosj")
+text = "0"
 
 [node name="Timer" type="Timer" parent="."]
 
@@ -230,6 +250,11 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("9_yqosj")
-text = "Premi Spazio per saltare"
+text = "Tocca per saltare"
+
+[node name="point-audio" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(0, 20)
+stream = ExtResource("10_ch2x6")
+volume_db = -20.0
 
 [connection signal="body_entered" from="Pig/hitbox" to="." method="_on_hitbox_body_entered"]

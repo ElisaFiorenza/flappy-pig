@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var animated_sprite_2d = $AnimatedSprite2D
+@onready var flap_audio = $"flap-audio"
 
 var gravity: float = 800.0
 var flap_strength: float = -200.0
@@ -14,13 +15,15 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 		if death == false:
 			velocity.y += gravity * delta
-			# Se si preme la barra spaziatrice, il personaggio vola
-			if Input.is_action_just_pressed("flap"):
-				animated_sprite_2d.play("flap")
-				velocity.y = flap_strength
-			# Applica il movimento
 			move_and_slide()
 
 func _death():
 	animated_sprite_2d.play("death")
 	death = true
+
+func _input(event):
+	if (Input.is_action_just_pressed("flap") or event is InputEventScreenTouch) && death == false:
+		if event.pressed:
+			animated_sprite_2d.play("flap")
+			flap_audio.play()
+			velocity.y = flap_strength
