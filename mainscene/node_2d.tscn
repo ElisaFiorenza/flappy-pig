@@ -204,7 +204,11 @@ shape = SubResource("CircleShape2D_73m3i")
 
 [node name="flap-audio" type="AudioStreamPlayer2D" parent="Pig"]
 stream = ExtResource("10_dpqck")
-volume_db = 1.0
+volume_db = 0.5
+
+[node name="point-audio" type="AudioStreamPlayer2D" parent="Pig"]
+stream = ExtResource("10_ch2x6")
+volume_db = -20.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
@@ -251,10 +255,5 @@ theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("9_yqosj")
 text = "Tocca per saltare"
-
-[node name="point-audio" type="AudioStreamPlayer2D" parent="."]
-position = Vector2(0, 20)
-stream = ExtResource("10_ch2x6")
-volume_db = -20.0
 
 [connection signal="body_entered" from="Pig/hitbox" to="." method="_on_hitbox_body_entered"]
