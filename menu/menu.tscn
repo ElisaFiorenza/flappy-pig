@@ -73,6 +73,7 @@ radius = 20.0
 script = ExtResource("1_hes3d")
 
 [node name="background" type="Sprite2D" parent="."]
+texture_filter = 1
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_f6qgk")
 offset = Vector2(320, 320)
