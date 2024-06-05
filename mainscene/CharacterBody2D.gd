@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var flap_audio = $"flap-audio"
+@onready var death_audio = $"death-audio"
 
 var gravity: float = 800.0
 var flap_strength: float = -200.0
@@ -18,6 +19,7 @@ func _physics_process(delta: float) -> void:
 			move_and_slide()
 
 func _death():
+	death_audio.play()
 	animated_sprite_2d.play("death")
 	death = true
 

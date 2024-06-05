@@ -13,7 +13,7 @@ func _ready():
 	var first_flame = FLAMES.instantiate()
 	arrayflame[0] = first_flame;
 	first_flame.position.x = flame_position
-	first_flame.position.y = randf_range(-110,110)
+	first_flame.position.y = randf_range(-120,80)
 	flame_position += 360
 	points.text = "0" 
 	add_child(first_flame)
@@ -23,7 +23,7 @@ func _ready():
 		var new_flame = FLAMES.instantiate()
 		add_child(new_flame)
 		new_flame.position.x = flame_position
-		new_flame.position.y = randf_range(-100,80)
+		new_flame.position.y = randf_range(-120,80)
 		flame_position += 360
 		var last_flame = arrayflame[1]
 		arrayflame[1] = first_flame
